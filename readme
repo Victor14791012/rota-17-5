@@ -1,0 +1,30 @@
+Para criar uma aplicação Node.js com Express e definir rotas 
+
+Inicialize um novo projeto Node.js:
+Abra um terminal na pasta onde deseja criar o projeto e execute o comando npm init . Isso criará um novo arquivo package.json com as configurações padrão.
+
+Instale o Express:
+Execute o comando npm install express para instalar o Express como dependência do seu projeto.
+
+Crie  páginas HTML :
+
+Crie um arquivo app.js:
+1- Importa o módulo Express para utilizar suas funcionalidades:
+const express = require('express');
+
+2-Cria uma instância do aplicativo Express:
+const app = express();
+
+3-Define duas rotas:
+A primeira rota é para o caminho raiz /, que serve um arquivo HTML chamado pag.html localizado na pasta public:
+
+app.get("/", (req, res) => {
+    res.sendFile(`${__dirname}/public/pag.html`);
+});
+
+4- Configura o servidor para escutar as requisições na porta especificada (3000 por padrão, ou a porta definida pela variável de ambiente PORT):
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
